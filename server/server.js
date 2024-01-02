@@ -17,6 +17,9 @@ if (!fs.existsSync(uploadDir)) {
 const pool = new Pool({
   connectionString:
     "postgres://victor:ToTqIJRG0X1YptDBRyEVEc4e4FGbO15C@dpg-cma5te7109ks73ee72g0-a.oregon-postgres.render.com/dev_gallery",
+  ssl: {
+    rejectUnauthorized: false, //
+  },
 });
 
 const storage = multer.diskStorage({
