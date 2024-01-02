@@ -15,11 +15,8 @@ if (!fs.existsSync(uploadDir)) {
 
 // PostgreSQL connection
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "dev_gallery",
-  password: "0815Oyoma",
-  port: 5432,
+  connectionString:
+    "postgres://victor:ToTqIJRG0X1YptDBRyEVEc4e4FGbO15C@dpg-cma5te7109ks73ee72g0-a.oregon-postgres.render.com/dev_gallery",
 });
 
 const storage = multer.diskStorage({
