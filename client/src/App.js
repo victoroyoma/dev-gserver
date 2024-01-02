@@ -9,7 +9,9 @@ function App() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/gallery");
+      const response = await axios.get(
+        "https://dev-gallery-qwds.onrender.com/gallery"
+      );
       setImages(response.data);
     } catch (error) {
       console.error("Error fetching images", error);

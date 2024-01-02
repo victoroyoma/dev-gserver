@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: "http://localhost:3001", // Replace with your frontend's URL
+    origin: "https://dev-gserver.vercel.app",
   })
 );
 

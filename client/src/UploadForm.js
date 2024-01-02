@@ -17,11 +17,15 @@ function UploadForm() {
     formData.append("image", file);
 
     try {
-      await axios.post("http://localhost:3000/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://dev-gallery-qwds.onrender.com/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Image uploaded successfully");
       // Clear the form
       setTitle("");
