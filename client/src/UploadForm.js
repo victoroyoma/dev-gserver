@@ -18,7 +18,7 @@ function UploadForm() {
 
     try {
       await axios.post(
-        "https://dev-gallery-qwds.onrender.com/upload",
+        "https://dev-gallery-qwds.onrender.com/gallery",
         formData,
         {
           headers: {
