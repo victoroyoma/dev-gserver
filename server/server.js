@@ -15,8 +15,7 @@ if (!fs.existsSync(uploadDir)) {
 
 // PostgreSQL connection
 const pool = new Pool({
-  connectionString:
-    "postgres://victor:ToTqIJRG0X1YptDBRyEVEc4e4FGbO15C@dpg-cma5te7109ks73ee72g0-a.oregon-postgres.render.com/dev_gallery",
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false, //
   },
