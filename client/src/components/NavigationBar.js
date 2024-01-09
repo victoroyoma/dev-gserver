@@ -6,8 +6,6 @@ import {
   faHome,
   faEnvelope,
   faProjectDiagram,
-  faMobileAlt,
-  faCode,
   faSignIn,
   faRegistered,
   faImage,
