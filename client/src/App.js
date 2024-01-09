@@ -3,7 +3,7 @@ import UploadForm from "./Dev/UploadForm";
 import Gallery from "./Dev/Gallery";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavigationBar from "./NavigationBar"; // Import the NavigationBar component
+import NavigationBar from "./components/NavigationBar"; // Import the NavigationBar component
 import "./index.css";
 import Devices from "./Devices/Devices";
 import Project from "./Project/Project";
