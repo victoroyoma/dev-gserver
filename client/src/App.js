@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UploadForm from "./Dev/UploadForm";
 import Gallery from "./Dev/Gallery";
 import axios from "axios";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -61,7 +61,7 @@ function App() {
           </div>
         </nav>
 
-        <Switch>
+        <Routes>
           <Route path="/" exact>
             <div className="container">
               <h1>Dev Gallery</h1>
@@ -77,7 +77,7 @@ function App() {
           {<Route path="/Devices" component={Devices} />}
           {<Route path="/Project" component={Project} />}
           {<Route path="/messaging" component={Profile} />}
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
