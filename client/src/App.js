@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import UploadForm from "./Dev/UploadForm";
-import Gallery from "./Dev/Gallery";
-import axios from "axios";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar"; // Import the NavigationBar component
 import "./index.css";
+import GalleryPage from "./GalleryPage"; // Import GalleryPage
+import HomePage from "./HomePage"; // Import HomePage
 import Devices from "./Devices/Devices";
 import Project from "./Project/Project";
 import Profile from "./Profile/Profile";
@@ -13,36 +12,12 @@ import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 
 function App() {
-  const [images, setImages] = useState([]);
-
-  const fetchImages = async () => {
-    try {
-      const response = await axios.get(
-        "https://dev-gallery-qwds.onrender.com/gallery"
-      );
-      setImages(response.data);
-    } catch (error) {
-      console.error("Error fetching images", error);
-    }
-  };
-
   return (
     <Router>
       <NavigationBar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="container">
-              <h1>Dev Gallery</h1>
-              <UploadForm />
-              <button onClick={fetchImages} className="fetch-images-btn">
-                Retrieve Images
-              </button>
-              <Gallery images={images} />
-            </div>
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/messaging" element={<Messaging />} />
