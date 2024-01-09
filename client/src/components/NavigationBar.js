@@ -8,6 +8,7 @@ import {
   faRegistered,
   faImage,
   faComputer,
+  faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import "./NavigationBar.css";
 
@@ -22,7 +23,7 @@ const NavigationBar = () => {
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
         <Link to="/messaging">
-          <FontAwesomeIcon icon={"fa-brands fa-rocketchat"} /> Messaging
+          <FontAwesomeIcon icon={faMessage} /> Messaging
         </Link>
         <Link to="/project">
           <FontAwesomeIcon icon={faProjectDiagram} /> Task Manager

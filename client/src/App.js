@@ -17,7 +17,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/GalleryPage" element={<GalleryPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/messaging" element={<Messaging />} />
