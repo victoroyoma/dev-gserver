@@ -4,6 +4,8 @@ const { Pool } = require("pg");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const app = express();
 const port = 3000;
 
@@ -70,6 +72,73 @@ app.post("/upload", upload.single("image"), async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).send("Error uploading image");
+  }
+});
+
+// JWT secret key
+const jwtSecret = process.env.JWT_SECRET || "your_jwt_secret";
+
+// Login route
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const userQuery = await pool.query(
+      "SELECT * FROM users WHERE username = $1",
+      [username]
+    );
+    if (userQuery.rows.length > 0) {
+      const user = userQuery.rows[0];
+
+      if (await bcrypt.compare(password, user.password)) {
+        // Passwords match, create JWT token
+        const token = jwt.sign(
+          { userId: user.id, username: user.username },
+          jwtSecret,
+          { expiresIn: "1h" }
+        );
+        res.json({ message: "Login successful", token });
+      } else {
+        // Passwords don't match
+        res.status(401).send("Invalid username or password");
+      }
+    } else {
+      // User not found
+      res.status(401).send("Invalid username or password");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal server error");
+  }
+});
+
+// Register route
+app.post("/register", async (req, res) => {
+  const { username, password, email } = req.body;
+
+  try {
+    // Check if user already exists
+    const userExists = await pool.query(
+      "SELECT * FROM users WHERE username = $1 OR email = $2",
+      [username, email]
+    );
+    if (userExists.rows.length > 0) {
+      return res.status(400).send("User already exists");
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Insert new user
+    const newUser = await pool.query(
+      "INSERT INTO users (username, password, email) VALUES ($1, $2, $3) RETURNING *",
+      [username, hashedPassword, email]
+    );
+
+    res.status(201).send("User registered successfully");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal server error");
   }
 });
 
