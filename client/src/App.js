@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import UploadForm from "./Dev/UploadForm";
 import Gallery from "./Dev/Gallery";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faEnvelope,
-  faProjectDiagram,
-  faMobileAlt,
-  faCode,
-} from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavigationBar from "./NavigationBar"; // Import the NavigationBar component
 import "./index.css";
 import Devices from "./Devices/Devices";
 import Project from "./Project/Project";
@@ -33,36 +26,11 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-        <nav className="navbar">
-          <Link className="nav-logo" to="/">
-            DevGServer
-          </Link>
-          <div className="nav-links">
-            <Link to="/">
-              <FontAwesomeIcon icon={faHome} /> Home
-            </Link>
-            <Link to="/messaging">
-              <FontAwesomeIcon icon={faEnvelope} /> Messaging
-            </Link>
-            <Link to="/project">
-              <FontAwesomeIcon icon={faProjectDiagram} /> Project
-            </Link>
-            <Link to="/devices">
-              <FontAwesomeIcon icon={faMobileAlt} /> Devices
-            </Link>
-            <Link to="/dev">
-              <FontAwesomeIcon icon={faCode} /> Dev
-            </Link>
-          </div>
-          <div className="nav-auth">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </div>
-        </nav>
-
-        <Routes>
-          <Route path="/UploadForm" exact>
+      <NavigationBar /> {/* Include the navigation bar */}
+      <Routes>
+        <Route
+          path="/"
+          element={
             <div className="container">
               <h1>Dev Gallery</h1>
               <UploadForm />
@@ -71,14 +39,14 @@ function App() {
               </button>
               <Gallery images={images} />
             </div>
-          </Route>
-          {/* Add routes*/}
-          {<Route path="/Messaging" component={Messaging} />}
-          {<Route path="/Devices" component={Devices} />}
-          {<Route path="/Project" component={Project} />}
-          {<Route path="/messaging" component={Profile} />}
-        </Routes>
-      </div>
+          }
+        />
+        {/* Corrected route definitions */}
+        <Route path="/messaging" element={<Messaging />} />
+        <Route path="/devices" element={<Devices />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </Router>
   );
 }

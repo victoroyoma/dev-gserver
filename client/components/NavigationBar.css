@@ -1,0 +1,60 @@
+/* NavigationBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links,
+.nav-auth {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links a,
+.nav-auth a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.nav-links a:hover,
+.nav-auth a:hover {
+  color: #ddd;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links,
+  .nav-auth {
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a,
+  .nav-auth a {
+    margin: 0.5rem 0;
+  }
+
+  .nav-auth {
+    margin-top: 1rem;
+  }
+}
