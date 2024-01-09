@@ -10,6 +10,8 @@ import {
   faCode,
   faSignIn,
   faRegistered,
+  faImage,
+  faComputer,
 } from "@fortawesome/free-solid-svg-icons";
 import "./NavigationBar.css"; // Make sure to create this CSS file for styling
 
@@ -27,13 +29,13 @@ const NavigationBar = () => {
           <FontAwesomeIcon icon={faEnvelope} /> Messaging
         </Link>
         <Link to="/project">
-          <FontAwesomeIcon icon={faProjectDiagram} /> Project
+          <FontAwesomeIcon icon={faProjectDiagram} /> Task Manager
         </Link>
         <Link to="/devices">
-          <FontAwesomeIcon icon={faMobileAlt} /> Devices
+          <FontAwesomeIcon icon={faComputer} /> Device Logs
         </Link>
         <Link to="/dev">
-          <FontAwesomeIcon icon={faCode} /> Dev
+          <FontAwesomeIcon icon={faImage} /> Dev Gallery
         </Link>
       </div>
       <div className="nav-auth">
