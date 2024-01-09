@@ -8,7 +8,7 @@ import Devices from "./Devices/Devices";
 import Project from "./Project/Project";
 import Profile from "./Profile/Profile";
 import Messaging from "./Messaging/Messaging";
-import LoginPage from "./Auth/Login";
+import LoginPage from "./Auth/LoginPage";
 import Register from "./Auth/Register";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/GalleryPage" element={<GalleryPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/messaging" element={<Messaging />} />
         <Route path="/devices" element={<Devices />} />
