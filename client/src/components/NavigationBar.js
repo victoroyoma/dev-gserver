@@ -1,4 +1,3 @@
-// NavigationBar.js
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +10,7 @@ import {
   faImage,
   faComputer,
 } from "@fortawesome/free-solid-svg-icons";
-import "./NavigationBar.css"; // Make sure to create this CSS file for styling
+import "./NavigationBar.css";
 
 const NavigationBar = () => {
   return (
@@ -37,11 +36,11 @@ const NavigationBar = () => {
         </Link>
       </div>
       <div className="nav-auth">
-        <Link to="/login">
+        <Link to="/Login">
           <FontAwesomeIcon icon={faSignIn} />
           Login
         </Link>
-        <Link to="/register">
+        <Link to="/Register">
           <FontAwesomeIcon icon={faRegistered} />
           Register
         </Link>

@@ -9,6 +9,8 @@ import Devices from "./Devices/Devices";
 import Project from "./Project/Project";
 import Profile from "./Profile/Profile";
 import Messaging from "./Messaging/Messaging";
+import Login from "./Auth/Login";
+import Register from "./Auth/Register";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -41,7 +43,8 @@ function App() {
             </div>
           }
         />
-        {/* Corrected route definitions */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/messaging" element={<Messaging />} />
         <Route path="/devices" element={<Devices />} />
         <Route path="/project" element={<Project />} />
