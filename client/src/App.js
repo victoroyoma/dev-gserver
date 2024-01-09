@@ -62,7 +62,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/Dev" exact>
+          <Route path="/UploadForm" exact>
             <div className="container">
               <h1>Dev Gallery</h1>
               <UploadForm />
