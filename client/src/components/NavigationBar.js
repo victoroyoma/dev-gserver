@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-  faEnvelope,
   faProjectDiagram,
   faSignIn,
   faRegistered,
@@ -23,7 +22,7 @@ const NavigationBar = () => {
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
         <Link to="/messaging">
-          <FontAwesomeIcon icon={faEnvelope} /> Messaging
+          <FontAwesomeIcon icon={"fa-brands fa-rocketchat"} /> Messaging
         </Link>
         <Link to="/project">
           <FontAwesomeIcon icon={faProjectDiagram} /> Task Manager
@@ -31,7 +30,7 @@ const NavigationBar = () => {
         <Link to="/devices">
           <FontAwesomeIcon icon={faComputer} /> Device Logs
         </Link>
-        <Link to="/UploadForm">
+        <Link to="/GalleryPage">
           <FontAwesomeIcon icon={faImage} /> Dev Gallery
         </Link>
       </div>
