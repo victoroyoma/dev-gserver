@@ -36,7 +36,7 @@ const NavigationBar = () => {
         </Link>
       </div>
       <div className="nav-auth">
-        <Link to="/Login">
+        <Link to="/LoginPage">
           <FontAwesomeIcon icon={faSignIn} />
           Login
         </Link>
