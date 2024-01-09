@@ -8,6 +8,8 @@ import {
   faProjectDiagram,
   faMobileAlt,
   faCode,
+  faSignIn,
+  faRegistered,
 } from "@fortawesome/free-solid-svg-icons";
 import "./NavigationBar.css"; // Make sure to create this CSS file for styling
 
@@ -35,8 +37,14 @@ const NavigationBar = () => {
         </Link>
       </div>
       <div className="nav-auth">
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+        <Link to="/login">
+          <FontAwesomeIcon icon={faSignIn} />
+          Login
+        </Link>
+        <Link to="/register">
+          <FontAwesomeIcon icon={faRegistered} />
+          Register
+        </Link>
       </div>
     </nav>
   );
