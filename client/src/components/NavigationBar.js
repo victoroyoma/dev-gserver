@@ -32,7 +32,7 @@ const NavigationBar = () => {
         <Link to="/devices">
           <FontAwesomeIcon icon={faComputer} /> Device Logs
         </Link>
-        <Link to="/dev">
+        <Link to="/gallery">
           <FontAwesomeIcon icon={faImage} /> Dev Gallery
         </Link>
       </div>

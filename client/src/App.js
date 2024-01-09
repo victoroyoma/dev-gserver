@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      <NavigationBar /> {/* Include the navigation bar */}
+      <NavigationBar />
       <Routes>
         <Route
           path="/"
