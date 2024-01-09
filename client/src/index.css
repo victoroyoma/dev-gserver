@@ -151,3 +151,60 @@ textarea:focus {
     font-size: 15px;
   }
 }
+
+/* App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links,
+.nav-auth {
+  display: flex;
+}
+
+.nav-links a,
+.nav-auth a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.nav-links a:hover,
+.nav-auth a:hover {
+  color: #ddd;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-auth {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .nav-links a,
+  .nav-auth a {
+    margin: 0.5rem 0;
+  }
+
+  .nav-auth {
+    margin-top: 1rem;
+  }
+}
