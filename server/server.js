@@ -71,7 +71,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
     res.send("Image uploaded successfully");
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error uploading image");
+    res.status(500).send("Error uploading image + err.message + err.message");
   }
 });
 
