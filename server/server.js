@@ -76,7 +76,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 });
 
 // JWT secret key
-const jwtSecret = process.env.JWT_SECRET || "your_jwt_secret";
+const jwtSecret = process.env.JWT_SECRET;
 
 // Login route
 app.post("/login", async (req, res) => {

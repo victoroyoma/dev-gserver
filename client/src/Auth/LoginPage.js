@@ -9,10 +9,13 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://your-backend-url/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://dev-gallery-qwds.onrender.com/login",
+        {
+          username,
+          password,
+        }
+      );
       console.log(response.data);
       // Handle login success (e.g., redirect, store token)
     } catch (error) {

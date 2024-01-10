@@ -18,11 +18,14 @@ function Register() {
     }
 
     try {
-      const response = await axios.post("https://your-backend-url/register", {
-        username,
-        password,
-        email,
-      });
+      const response = await axios.post(
+        "https://dev-gallery-qwds.onrender.com/register",
+        {
+          username,
+          password,
+          email,
+        }
+      );
       console.log(response.data);
       // Handle registration success (e.g., redirect to login)
     } catch (error) {
